@@ -1,3 +1,17 @@
-<h1>
-  {{title}}
-</h1>
+<!--<div *ngFor="let contact of contacts">-->
+<!--{{contact.firstName + ' ' + contact.lastName}}-->
+<!--</div>-->
+<app-contact-list [contacts]="contacts" (select)="contactSelected($event)"></app-contact-list>
+
+<div *ngIf="selectedContact">
+  Selected: {{selectedContact.firstName}}
+</div>
+
+<md-input-container>
+  <input mdInput name="componentProperty" [(ngModel)]="helloText" type="text" required
+         placeholder="type something...">
+</md-input-container>
+<br>
+helloText:{{helloText}}
+
+<!--<button md-raised-button (click)="doSomething()">Click</button>-->
